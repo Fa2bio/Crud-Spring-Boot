@@ -9,7 +9,6 @@
 * [Technologies Used](#technologies)
 * [Installation](#installation)
 * [Run Application](#run-application)
-* [General Usage](#general-usage)
 
 ## <a name="what-is-it"></a>What is it?
 
@@ -42,8 +41,6 @@ spring.datasource.password=
 ## <a name="run-application"></a>Run Application
 
 After meeting the requirements and installation, run the main method as a spring boot app in ProjetoSbApplication.java
-
-## <a name="general-usage"></a>General Usage
 
 ### CRUD
 * This project doesn't start the database with test data, the first CRUD method run must be the POST to populate the database
