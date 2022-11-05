@@ -8,7 +8,7 @@
 		<version>2.7.0</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
-	<groupId>com.github.FabioSCP0</groupId>
+	<groupId>com.github.Fa2bio</groupId>
 	<artifactId>ProjetoSB</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>ProjetoSB</name>
