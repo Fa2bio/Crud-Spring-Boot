@@ -1,8 +1,8 @@
-package com.github.Fa2bio.ProjetoSB.models.repositories;
+package com.github.Fa2bio.ProjetoSB.domain.repository;
 
 import org.springframework.data.repository.PagingAndSortingRepository;
 
-import com.github.Fa2bio.ProjetoSB.models.entity.Produto;
+import com.github.Fa2bio.ProjetoSB.domain.model.Produto;
 
 public interface ProdutoRepository extends PagingAndSortingRepository<Produto, Integer>{
 
