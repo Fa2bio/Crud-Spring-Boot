@@ -1,4 +1,4 @@
-package com.github.Fa2bio.ProjetoSB.controllers;
+package com.github.Fa2bio.ProjetoSB.api.controller;
 
 import java.util.Optional;
 import javax.validation.Valid;
@@ -12,38 +12,31 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.github.Fa2bio.ProjetoSB.models.entity.Produto;
-import com.github.Fa2bio.ProjetoSB.models.repositories.ProdutoRepository;
+import com.github.Fa2bio.ProjetoSB.domain.model.Produto;
+import com.github.Fa2bio.ProjetoSB.domain.repository.ProdutoRepository;
 
 @RestController
-@RequestMapping("/api/produtos")
+@RequestMapping("/produtos")
 public class ProdutoController {
 	
 	@Autowired
 	private ProdutoRepository produtoRepository;
 	
-	//Create and Update
-	//@PostMapping
-	//@PutMapping
-	@RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
-	public @ResponseBody Produto salvarProduto(@Valid Produto produto) {
-		produtoRepository.save(produto);
-		return produto;
-	}
-	
-	// Read
 	@GetMapping
 	public Iterable<Produto> obterProdutos() {
 		return produtoRepository.findAll();
 	}
 	
-	// Read
+	@GetMapping(path="/{id}")
+	public Optional<Produto> obterProdutosId(@PathVariable int id) {
+		return produtoRepository.findById(id);
+	}
+	
 	@GetMapping(path="/nome/{parteNome}")
 	public Iterable<Produto> obterProdutosPorNome(@PathVariable String parteNome) {
 		return produtoRepository.findByNomeContainingIgnoreCase(parteNome);
 	}
 	
-	// Read
 	@GetMapping(path = "/pagina/{numeroPagina}/{qtdePagina}")
 	public Iterable<Produto> obterProdutosPorPagina(@PathVariable int numeroPagina, @PathVariable int qtdePagina) {
 
@@ -54,14 +47,13 @@ public class ProdutoController {
 		PageRequest page = PageRequest.of(numeroPagina, qtdePagina);
 		return produtoRepository.findAll(page);
 	}
-	
-	// Read
-	@GetMapping(path="/{id}")
-	public Optional<Produto> obterProdutosId(@PathVariable int id) {
-		return produtoRepository.findById(id);
-	}
 
-	// Delete
+	@RequestMapping(method = {RequestMethod.POST, RequestMethod.PUT})
+	public @ResponseBody Produto salvarProduto(@Valid Produto produto) {
+		produtoRepository.save(produto);
+		return produto;
+	}
+	
 	@DeleteMapping(path = "/{id}")
 	public void excluirProduto(@PathVariable int id) {
 		produtoRepository.deleteById(id);
