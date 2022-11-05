@@ -1,21 +1,89 @@
-# Crud-Spring-Boot
+<h1>Crud-Spring-Boot</h1>
 
-Para executar esse projeto, clone o repositorio, modifique o nome do arquivo "applicationModel.properties"(/ProjetoSB/src/main/resources/applicationModel.properties) para "application.properties"
+> Status: Finished ✔️
 
-Edite o campo (spring.datasource.username= spring.datasource.password=) insirindo o usuario e senha do banco de dados MYSQL do seu sistema
+### Contents
+  
+* [What is it?](#what-is-it)
+* [Requirements](#requirements)
+* [Technologies Used](#technologies)
+* [Installation](#installation)
+* [Run Application](#run-application)
+* [General Usage](#general-usage)
 
-Importe o projeto MAVEN (File -> Import -> Maven -> Existing Maven Projects) na IDE para que as dependências sejam baixadas
+## <a name="what-is-it"></a>What is it?
 
-Execute a classe ProjetoSbApplication.java (/ProjetoSB/src/main/java/com/github/FabioSCP0/ProjetoSB/ProjetoSbApplication.java)
+A back-end project of a CRUD using Java and Spring Boot.
 
-Para fazer um CREATE no POSTMAN http://localhost:8080/api/produtos/ inserindo o NOME, o PRECO, o DESCONTO do produto
+## <a name="requirements"></a>Requirements
 
-Para fazer um READE de todos os produtos http://localhost:8080/api/produtos/
+- Java 12+
+- Spring Boot (version 2.1.7.RELEASE)
+- MySQL 6.0+
 
-Para fazer um READE por nome http://localhost:8080/api/produtos/nome/{insira o nome}
+## <a name="technologies"></a>Technologies Used
 
-Para fazer um READE por paginação http://localhost:8080/api/produtos/pagina/{numero da paginas}/{qtde de paginas}
+- Java
+- Spring Boot
+- MySQL
 
-Para fazer um READE por id http://localhost:8080/api/produtos/{Id}
+## <a name="installation"></a>Installation
 
-Para fazer um DELETE no POSTMAN http://localhost:8080/api/produtos/ inserindo o ID do produto.
+- Clone the repository for your device
+- Import it as a MAVEN project
+- Under src/main/resources/applicationModel.properties modify the file name applicationModel.properties to application.properties
+- In your Postman client, import requests from the ProjetoSB.postman_collection.json file
+
+### Application.properties
+```xml
+spring.datasource.username=
+spring.datasource.password=
+```
+## <a name="run-application"></a>Run Application
+
+After meeting the requirements and installation, run the main method as a spring boot app in ProjetoSbApplication.java
+
+## <a name="general-usage"></a>General Usage
+
+### CRUD
+* This project doesn't start the database with test data, the first CRUD method run must be the POST to populate the database
+* After you add the requests to your Postman client, you'll have access to the following API features
+
+<table border="1">
+   <thead>
+   <tr>
+       <th>Entities/Methods</th>
+       <th>Produto</th>
+   </tr>
+   </thead>
+   <tbody>
+   <tr>
+       <td>(GET) Listar</td>
+       <td>✔️</td>
+   </tr>
+   <tr>
+       <td>(GET) Buscar Por Id</td>
+       <td>✔️</td>
+   </tr>
+   
+   <tr>
+       <td>(GET) Buscar Por Parte Do Nome</td>
+       <td>✔️</td>
+   </tr>
+   
+   <tr>
+       <td>(GET) Buscar Por Página</td>
+       <td>✔️</td>
+   </tr>
+   
+   <tr>
+       <td>(POST) Adicionar</td>
+       <td>✔️</td>
+   </tr>
+   
+   <tr>
+       <td>(DEL) Excluir</td>
+       <td>✔️</td>
+   </tr>
+   </tbody>
+</table>
