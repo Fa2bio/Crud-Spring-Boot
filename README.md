@@ -1,4 +1,4 @@
-<h1>Crud-Spring-Boot</h1>
+<h1>Crud Spring Boot</h1>
 
 > Status: Finished ✔️
 
@@ -31,6 +31,7 @@ A back-end project of a CRUD using Java and Spring Boot.
 - Clone the repository for your device
 - Import it as a MAVEN project
 - Under src/main/resources/applicationModel.properties modify the file name applicationModel.properties to application.properties
+- In the application.properties file, edit the USER and PASSWORD of your MySQL database;
 - In your Postman client, import requests from the ProjetoSB.postman_collection.json file
 
 ### Application.properties
